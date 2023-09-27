@@ -34,7 +34,6 @@ if (goBack) {
 }
 
 
-
 if (form) {
     form.addEventListener("submit", (e) => {
         e.preventDefault()
@@ -45,16 +44,6 @@ if (form) {
     })
 }
 
-/* function updateSelectedWhenText() {
-    const whenValue = selectedRadioOption.find(option => option === "anytime" || option === "weekend" || option === "1-week" || option === "2-weeks") || "some default value";
-    if (selectedWhen) {
-        selectedWhen.textContent = `${whenValue} in`;
-    } else {
-        console.error("Element with ID 'selected-when' not found.");
-    }
-    console.log("selectedWhen element:", selectedWhen);
-} */
-console.log("KnulLLLLla mig 1", selectedRadioOption)
 function getTravelChoices() {
     let radio = document.getElementsByTagName("input");
 
@@ -65,8 +54,6 @@ function getTravelChoices() {
         }
 
     }
-    console.log("KnulLLLLla mig 2", selectedRadioOption)
-
 
     const matchingDestinations = destination.filter(dest =>
         selectedRadioOption.some(tag => dest.locationTags.includes(tag))
@@ -95,7 +82,25 @@ function loadSelectedDataFromLocalStorage() {
     }
 }
 
-if (travelInfo && newVayCayBtn) {
+if (travelInfo) {
+
+    travelInfo.addEventListener("click", (event) => {
+        if (event.target.id === "drop-down-btn") {
+            const olElement = travelInfo.querySelector("ol");
+            const downArrow = travelInfo.querySelector(".fa-chevron-down")
+            if (olElement.style.display === "none" || olElement.style.display === "") {
+                olElement.style.display = "flex";
+            } else {
+                olElement.style.display = "none";
+            }
+
+            if (downArrow.style.transform === "none") {
+                downArrow.style.transform = "rotate(-90deg)"
+            } else {
+                downArrow.style.transform = "none"
+            }
+        }
+    });
 
     newVayCayBtn.addEventListener("click", () => {
         console.log("BTN CLICKED");
@@ -135,7 +140,7 @@ if (travelInfo && newVayCayBtn) {
             
             <div class="country-info">
                 <h4>Top 5 must visit!</h4>
-                <i class="fa-solid fa-chevron-down"></i>
+                <i id="drop-down-btn" class="fa-solid fa-chevron-down"></i>
                 <ol>
                     <li>
                         <p>

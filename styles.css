@@ -204,4 +204,21 @@ h4 {
 .fa-chevron-down {
     color: #FF6A41;
     font-size: 1.2rem;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+
+}
+
+.fa-chevron-down:hover {
+    cursor: pointer;
+}
+
+ol {
+    display: none;
+    transition: transform 0.3s ease;
+    flex-direction: column;
+}
+
+li {
+    padding-top: 1em;
 }
