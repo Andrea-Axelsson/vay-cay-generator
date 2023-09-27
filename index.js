@@ -9,7 +9,7 @@ let selectedDestination = {}
 
 loadSelectedDataFromLocalStorage();
 
-/* function unsplashApi() {
+function unsplashApi() {
     const accessKey = "d2ou1QiCPK19Gf6ixqmBIo59nbb6Zsgdr_n7KZxMPOc"
 
     fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${selectedDestination.country}+${selectedDestination.city}`)
@@ -21,10 +21,10 @@ loadSelectedDataFromLocalStorage();
             travelImageDiv.style.backgroundImage = `linear-gradient(to top, rgba(0, 0, 0, 0.6) 40%, transparent 40%), url(${imageUrl})`
         })
         .catch(error => {
-            console.error('Error fetching images:', error) // Corrected error message
+            console.error('Error fetching images:', error)
         });
 }
-unsplashApi() */
+unsplashApi()
 
 if (goBack) {
     goBack.addEventListener("click", () => {
@@ -38,7 +38,7 @@ if (form) {
     form.addEventListener("submit", (e) => {
         e.preventDefault()
         getTravelChoices()
-        /* unsplashApi() */
+        unsplashApi()
         saveSelectedDataToLocalStorage();
         window.location = "trip-result.html"
     })
@@ -106,6 +106,7 @@ if (travelInfo) {
         console.log("BTN CLICKED");
         getNewTravelDestination();
         render();
+        unsplashApi()
         window.scroll({ top: 0, behavior: "smooth" })
     });
 
