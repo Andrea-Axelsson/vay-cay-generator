@@ -1,10 +1,12 @@
 import { goBack } from "./buttons.js";
 import {loadSelectedDataFromLocalStorage} from "./localstorage.js";
-
+import { expandInfo } from "./buttons.js";
+import { unsplashApi } from "./fetch.js";
 
 const goBackBtn = document.getElementById("go-back-btn")
 const myTravelList = document.getElementById("my-travel-list")
 const savedTrips = loadSelectedDataFromLocalStorage("savedTrips")
+const selectedDestination = loadSelectedDataFromLocalStorage("selectedDestination");
 
 /* -----------------------------RENDER SAVED TRIPS---------------------------------- */
 
@@ -19,12 +21,24 @@ function renderSavedTrips(savedTrips) {
 
     const separator = document.createElement("hr")
     myTravelList.appendChild(separator)
+
+    const dropDownBtn = tripElement.querySelector("#drop-down-btn-1")
+    const downArrow = dropDownBtn.querySelector(".fa-chevron-down")
+    const olElement = dropDownBtn.nextElementSibling
+    const likeHeartBtn = tripElement.querySelector("#like-heart-btn");
+    const travelImageDiv = tripElement.querySelector(".travel-image")
+  
+    dropDownBtn.addEventListener("click", function() {
+    expandInfo(olElement, downArrow)
+
+
+    })
+    likeHeartBtn.classList.add("liked");
+    unsplashApi(selectedDestination.country, selectedDestination.city, travelImageDiv)
+
   })
 
-
 }
-
-
 
 renderSavedTrips(savedTrips)
 
@@ -32,3 +46,4 @@ renderSavedTrips(savedTrips)
 
 
 goBackBtn.addEventListener("click", goBack)
+
