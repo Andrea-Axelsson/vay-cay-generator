@@ -63,8 +63,17 @@ function saveTrip(savedTrips, saveTripId, travelHtml, likeHeartBtn) {
     }
 }
 
+function removeTrip(savedTrips, saveTripId){
+    const tripToRemove = savedTrips.findIndex(trip => trip.uuid === saveTripId)
 
-export {goBack, myTrips, expandInfo, getNewTravelDestination, saveTrip}
+    if (tripToRemove !==-1){
+        savedTrips.splice(tripToRemove, 1)
+    }
+    saveSelectedDataToLocalStorage("savedTrips", savedTrips)
+}
+
+
+export {goBack, myTrips, expandInfo, getNewTravelDestination, saveTrip, removeTrip}
 
 
 

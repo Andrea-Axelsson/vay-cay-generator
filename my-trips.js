@@ -1,6 +1,6 @@
 import { goBack } from "./buttons.js";
 import {loadSelectedDataFromLocalStorage} from "./localstorage.js";
-import { expandInfo } from "./buttons.js";
+import { expandInfo, removeTrip } from "./buttons.js";
 import { unsplashApi } from "./fetch.js";
 
 const goBackBtn = document.getElementById("go-back-btn")
@@ -33,6 +33,13 @@ function renderSavedTrips(savedTrips) {
 
 
     })
+
+    likeHeartBtn.addEventListener("click", function(){
+      const saveTripId = likeHeartBtn.getAttribute("data-save")
+      removeTrip(savedTrips, saveTripId)
+      location.reload()
+    })
+
     likeHeartBtn.classList.add("liked");
     unsplashApi(selectedDestination.country, selectedDestination.city, travelImageDiv)
 

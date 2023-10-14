@@ -1,7 +1,7 @@
 function unsplashApi(country, city, travelImageDiv) {
     const accessKey = "d2ou1QiCPK19Gf6ixqmBIo59nbb6Zsgdr_n7KZxMPOc"
 
-    fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${country}+${city}`)
+    fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}&query=${country}+${city}+sighting`)
         .then(res => res.json())
         .then(data => {
             console.log("API DATA",data)
