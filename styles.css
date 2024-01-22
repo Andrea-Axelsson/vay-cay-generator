@@ -1,0 +1,256 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common Styles */
+body {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-1,
+.container-2 {
+    width: 95%;
+    min-height: 844px;
+    background-color: #fff;
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 3.125em;
+    text-align: center;
+}
+
+.container-1 {
+
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-2 {
+    background-image: url("images/blobs.png");
+    background-size: 400%;
+    background-position: 50% 5%;
+}
+
+.logo {
+    text-align: center;
+}
+
+.selection-group {
+    padding-top: 2.875em;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.button-group label {
+    cursor: pointer;
+}
+
+
+.button-group label input[type="radio"] {
+    display: none;
+}
+
+.button-group label span {
+    position: relative;
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 60px;
+    background-color: #00C3FF;
+    color: #001F28;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 130px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+
+.button-group label input[type="radio"]:checked~span {
+    background-color: #001F28;
+    border: 2px solid #00C3FF;
+    color: #00C3FF;
+}
+
+
+
+.button-group label input[type="radio"]:hover~span {
+    background-color: #029dcc;
+}
+
+.generate-btn {
+    background-color: #FF6A41;
+    border: none;
+    font-family: 'Lexend', sans-serif;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1.25em 1.875em;
+    border-radius: 60px;
+    margin-top: 2em;
+}
+
+.generate-btn:hover {
+    background-color: #ee582f;
+    cursor: pointer;
+}
+
+/* Page 2 Styles */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.travel-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #00C3FF;
+    background-size: 100% 100%, cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 320px;
+    border-radius: 30px;
+    text-align: left;
+    position: relative;
+    padding: 1.5em;
+}
+
+.travel-image-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+
+}
+
+.city-text {
+    font-weight: 300;
+}
+
+.country-info {
+    text-align: left;
+    padding-top: 1.5em;
+}
+
+/* FONTS */
+.logo-1,
+.logo-2,
+h3 {
+    color: #fff;
+}
+
+.logo-1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3.125rem;
+}
+
+.logo-2 {
+    font-family: 'Ms Madi', cursive;
+    font-size: 2.1875rem;
+    margin-top: -15px;
+}
+
+.travel-image-info p {
+    color: #fff;
+    font-size: 0.875rem;
+    padding-bottom: 0.8125em;
+}
+
+h3 {
+    font-size: 1.25rem;
+    padding-bottom: 1.2em;
+}
+
+.travel-image-info h3 {
+    padding: 0;
+}
+
+.country-text {
+    color: #001F28;
+}
+
+p,
+h3,
+h4,
+li {
+    font-family: 'Lexend', sans-serif;
+}
+
+h4 {
+    font-size: 1.125rem;
+    color: #FF6A41;
+    display: inline-block;
+    padding-bottom: 0.8125em;
+}
+
+/* ICONS */
+.fa-arrow-left {
+    font-size: 1.5rem;
+    color: #FF6A41;
+    cursor: pointer;
+}
+
+.fa-chevron-down {
+    color: #FF6A41;
+    font-size: 1.2rem;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+
+}
+
+.fa-chevron-down:hover {
+    cursor: pointer;
+}
+
+ol {
+    display: none;
+    transition: transform 0.3s ease;
+    flex-direction: column;
+}
+
+li {
+    padding-top: 1em;
+}
+
+.my-trips {
+    cursor: pointer;
+}
+
+.like-heart {
+    margin-top: auto;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+    width: 32px;
+    height: 32
+}
+
+.liked{
+    filter: invert(46%) sepia(46%) saturate(1362%) hue-rotate(332deg) brightness(108%) contrast(101%);
+}
+
+hr{
+    margin: 50px 0;
+    border: none;
+    background-color: #79a3b1;
+    height: 2px;
+}
+
+#my-travel-list > div:first-child{
+    padding-top: 2.5em;
+}

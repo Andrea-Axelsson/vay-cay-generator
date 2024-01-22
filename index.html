@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VayCay Generator start</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lexend:wght@400;500;600;700&family=Ms+Madi&display=swap"
+        rel="stylesheet">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+    <div id="start-page" class="container-1">
+        <div class="logo">
+            <div class="logo">
+                <h1 class="logo-1">VayCay</h1>
+                <h2 class="logo-2">generator</h2>
+            </div>
+        </div>
+        <form>
+            <div class="selection-group">
+                <h3>Where?</h3>
+                <div class="button-group">
+
+                    <label>
+                        <input type="radio" name="where" id="beach" value="Beach" checked>
+                        <span>Beach</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="where" id="city" value="City">
+                        <span>City</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="where" id="nature" value="Nature">
+                        <span>Nature</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="where" id="adventure" value="Adventure">
+                        <span>Adventure</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="where" id="cultural" value="Cultural">
+                        <span>Cultural</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="where" id="arctic" value="Arctic" >
+                        <span>Arctic</span>
+                    </label>
+                </div>
+            </div>
+            <div class="selection-group">
+                <h3>When?</h3>
+
+                <div class="button-group">
+                    <label>
+                        <input type="radio" name="when" id="1-day" value="1-day" checked>
+                        <span>1 Day</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="when" id="weekend" value="Weekend">
+                        <span>Weekend</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="when" id="1-week" value="1-week">
+                        <span>1 Week</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="when" id="2-weeks" value="2-weeks">
+                        <span>2 Weeks</span>
+                    </label>
+                </div>
+
+                <input id="submit-btn" type="submit" value="Generate VayCay" class="generate-btn">
+        </form>
+
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
